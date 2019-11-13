@@ -174,7 +174,7 @@ CKEDITOR_CONFIGS = {
         'width': 'auto',
         'height': '250px',
         'tabSpaces': 4,
-# 工具栏风格
+        # 工具栏风格
         'toolbar': 'Custom',
         # 工具栏按钮
         'toolbar_Custom': [
@@ -197,3 +197,10 @@ CKEDITOR_CONFIGS = {
 }
 
 CKEDITOR_UPLOAD_PATH = ''
+
+# django文件存储
+DEFAULT_FILE_STORAGE = 'blog.utils.fastdfs.fdfs_storage.FastDFSStorage'
+
+# FastDFS
+FDFS_URL = 'http://117.51.141.95:8888/'  # 访问图片的路径域名 ip地址修改为自己机器的ip地址
+FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')

@@ -13,6 +13,8 @@ drf-extensions = "*"
 django-redis = "*"
 django-cors-headers = "*"
 django-ckeditor = "*"
+mutagen = "*"
+requests = "*"
 
 [requires]
 python_version = "3.6"
