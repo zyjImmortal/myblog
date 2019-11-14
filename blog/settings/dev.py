@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'ckeditor',  # 富文本编辑器
+    'ckeditor_uploader',  # 富文本编辑器上传图片模块
     'corsheaders',
     'articles.apps.ArticlesConfig',
     'users.apps.UsersConfig',
@@ -86,7 +88,7 @@ DATABASES = {
         'HOST': '127.0.0.1',  # 数据库主机
         'PORT': 3306,  # 数据库端口
         'USER': 'root',  # 数据库用户名
-        'PASSWORD': 'zyj665582@',  # 数据库用户密码
+        'PASSWORD': '12345678',  # 数据库用户密码
         'NAME': 'myblog'  # 数据库名字
     }
 }
@@ -175,22 +177,22 @@ CKEDITOR_CONFIGS = {
         'height': '250px',
         'tabSpaces': 4,
         # 工具栏风格
-        'toolbar': 'Custom',
+        'toolbar': 'full',
         # 工具栏按钮
-        'toolbar_Custom': [
-            # 表情 代码块
-            ['Smiley', 'CodeSnippet'],
-            # 字体风格
-            ['Bold', 'Italic', 'Underline', 'RemoveFormat', 'Blockquote'],
-            # 字体颜色
-            ['TextColor', 'BGColor'],
-            # 链接
-            ['Link', 'Unlink'],
-            # 列表
-            ['NumberedList', 'BulletedList'],
-            # 最大化
-            ['Maximize']
-        ],
+        # 'toolbar_Custom': [
+        #     # 表情 代码块
+        #     ['Smiley', 'CodeSnippet'],
+        #     # 字体风格
+        #     ['Bold', 'Italic', 'Underline', 'RemoveFormat', 'Blockquote'],
+        #     # 字体颜色
+        #     ['TextColor', 'BGColor'],
+        #     # 链接
+        #     ['Link', 'Unlink'],
+        #     # 列表
+        #     ['NumberedList', 'BulletedList'],
+        #     # 最大化
+        #     ['Maximize']
+        # ],
         # 加入代码块插件
         'extraPlugins': ','.join(['codesnippet']),
     }
@@ -199,7 +201,7 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_UPLOAD_PATH = ''
 
 # django文件存储
-DEFAULT_FILE_STORAGE = 'blog.utils.fastdfs.fdfs_storage.FastDFSStorage'
+DEFAULT_FILE_STORAGE = 'blog.utils.fastdfs.storage.FastDFSStorage'
 
 # FastDFS
 FDFS_URL = 'http://117.51.141.95:8888/'  # 访问图片的路径域名 ip地址修改为自己机器的ip地址

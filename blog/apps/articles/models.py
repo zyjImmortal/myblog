@@ -7,7 +7,7 @@ from blog.utils.models import BaseModel
 
 class Article(BaseModel):
     title = models.CharField(max_length=20, verbose_name="文章标题")
-    digest = models.CharField(max_length=100,verbose_name="文章摘要")
+    digest = models.CharField(max_length=100, verbose_name="文章摘要")
     content = RichTextUploadingField(default='', verbose_name='文章内容')
     category = models.ForeignKey("categories.Category", on_delete=models.CASCADE,
                                  related_name="category_article", verbose_name="类别")
@@ -17,7 +17,6 @@ class Article(BaseModel):
 
     def __str__(self):
         return self.title
-
 
     class Meta:
         db_table = "articles"
